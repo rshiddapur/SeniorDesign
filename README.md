@@ -5,6 +5,7 @@ Code for an Arduino-based Elegoo robot car to follow a track and handle obstacle
 - FEATURES: 
 - BUGS: 
 
+## [Team Contract](https://docs.google.com/document/d/1qSgGlHly_AZ_SWpHDw8KOmh2b5Dciv_2l8BiG0txpeQ/edit)
 
 ## Setting up your development environment
 
