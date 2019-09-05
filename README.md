@@ -26,3 +26,5 @@ Check if the installation was successful by running the following in the command
 ```bash
 git --version
 ```
+
+If you ever get confused on what to do with git, [check out this handy cheat sheet for help](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
