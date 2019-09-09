@@ -71,8 +71,8 @@
         delay(1000);
 
         // test the left motors
-        digitalWrite(IN1, HIGH);
-        digitalWrite(IN2, LOW);
+        digitalWrite(IN1, LOW);
+        digitalWrite(IN2, HIGH);
         analogWrite(ENB, 128);
         delay(2000);
         digitalWrite(IN1, LOW);
@@ -81,10 +81,32 @@
         delay(1000);
 
         // test the right motors
-        digitalWrite(IN4, HIGH);
-        digitalWrite(IN3, LOW);
+        digitalWrite(IN4, LOW);
+        digitalWrite(IN3, HIGH);
         analogWrite(ENA, 128);
         delay(2000);
+        digitalWrite(IN4, LOW);
+        digitalWrite(IN3, LOW);
+        analogWrite(ENA, 0);
+        delay(1000);
+
+        // run all motors
+        // left motors
+        digitalWrite(IN1, LOW);
+        digitalWrite(IN2, HIGH);
+        analogWrite(ENB, 128);
+        // right motors
+        digitalWrite(IN4, LOW);
+        digitalWrite(IN3, HIGH);
+        analogWrite(ENA, 128);
+        delay(5000);
+
+        // stop all motors
+        // left motors
+        digitalWrite(IN1, LOW);
+        digitalWrite(IN2, LOW);
+        analogWrite(ENB, 0);
+        // right motors
         digitalWrite(IN4, LOW);
         digitalWrite(IN3, LOW);
         analogWrite(ENA, 0);
