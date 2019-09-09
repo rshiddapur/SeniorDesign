@@ -28,4 +28,14 @@ Check if the installation was successful by running the following in the command
 git --version
 ```
 
+Once Git is installed and set up, navigate to the directory you want to install the project in through your command line. (No need to make a new folder, as it will download when you run the proper Git commands detailed below.)
+
+In this directory, run 
+
+```bash
+git clone https://github.com/rshiddapur/SeniorDesign.git
+```
+
+to download the repository locally. 
+
 If you ever get confused on what to do with git, [check out this handy cheat sheet for help](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
