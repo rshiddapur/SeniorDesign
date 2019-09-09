@@ -34,7 +34,7 @@ In this directory, run
 
 ```bash
 git clone https://github.com/rshiddapur/SeniorDesign.git
-```bash
+```
 
 to download the repository locally. 
 
