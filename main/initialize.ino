@@ -55,24 +55,29 @@
 
         getDistance();
 
-        // test the left motors
-        digitalWrite(IN1, HIGH);
-        digitalWrite(IN2, LOW);
-        analogWrite(ENB, 128);
-        delay(2000);
-        digitalWrite(IN1, LOW);
-        digitalWrite(IN2, LOW);
-        analogWrite(ENB, 0);
-        delay(1000);
-
-        // test the right motors
-        digitalWrite(IN4, HIGH);
-        digitalWrite(IN3, LOW);
-        analogWrite(ENA, 128);
-        delay(2000);
-        digitalWrite(IN4, LOW);
-        digitalWrite(IN3, LOW);
-        analogWrite(ENA, 0);
-        delay(1000);
+        // test turning forward left
+        motor('L',2);
+        // test turning backward left
+        motor('l',4);
+        // test turning forward left
+        motor('L',2);
+        // test turning forward right
+        motor('R',2);
+        // test turning backward right
+        motor('r',4);
+        // test turning forward right
+        motor('R',2);
+        // test moving straight forward
+        motor('S',2);
+        // test moving straight backward
+        motor('s',4);
+        // test moving straight forward
+        motor('S',2);
+        // test turning clockwise (to the right)
+        motor('C',8);
+        // test turning counter-clockwise (to the left)
+        motor('c',16);
+        // test turning clockwise (to the right)
+        motor('C',8);
     }
 
