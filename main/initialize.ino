@@ -22,8 +22,15 @@
 // Servo pins
 #define ServoPin 3
 
-    // global variables
-    Servo head; // create servo object to control the looking direction
+// Macros to read the three line tracking sensors.
+// These will return '0' with a light surface and '1'
+// with a dark surface.
+#define LT_R !digitalRead(10)
+#define LT_M !digitalRead(4)
+#define LT_L !digitalRead(2)
+
+// global variables
+Servo head; // create servo object to control the looking direction
 
      void initialize()
     {
