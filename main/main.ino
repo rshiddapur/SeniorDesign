@@ -27,7 +27,7 @@ void waitForTick()
 
 void setup() {
 
-    initialize();
+    //initialize();
     // Example of reading the ultrasonic rangefinder and printing to
     // the serial port.
 
@@ -48,15 +48,9 @@ void loop () {
     // take a variable amount of time, up to ~10 ms.
     //Serial.println(readDistance());
 
-    // Example of how the sensor macros can be used.  Whether or not this
-    // type of sensor interaction belongs in loop() is up to your
-    // code structure.
-    //if (LT_M)
-    //{
-        // Do something based on the middle sensor detecting a dark surface
-    //}
-    // followLine();
+    followLine();
     // station();
+    return;
 }
 
 
