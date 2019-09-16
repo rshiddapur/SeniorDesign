@@ -5,6 +5,10 @@
 // Library for controlling the hobby servo
 #include <Servo.h>
 
+// Configuration
+// Period of the loop, in ms
+#define LoopTime 100
+
 void setup() {
 
     initialize();
