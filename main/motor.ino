@@ -15,7 +15,7 @@
     void motor(  char direction, int numTicks )
     {
     // set default motor run time to 1/10 second (orig. value was 2000)
-    int runTime = 100;
+    int runTime = 50;
 
     // set default motor delay time to 1/100 second (orig. value was 1000)
     int delayTime =10;
