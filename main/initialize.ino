@@ -54,29 +54,30 @@
         delay(1000);
 
         getDistance();
-
+        
+        // do a little dance
         // test turning forward left
-        motor('L',2);
+        motor('L',1);
         // test turning backward left
-        motor('l',4);
+        motor('l',2);
         // test turning forward left
-        motor('L',2);
+        motor('L',1);
         // test turning forward right
-        motor('R',2);
+        motor('R',1);
         // test turning backward right
-        motor('r',4);
+        motor('r',2);
         // test turning forward right
-        motor('R',2);
+        motor('R',1);
         // test moving straight forward
-        motor('S',2);
+        motor('S',1);
         // test moving straight backward
-        motor('s',4);
+        motor('s',2);
         // test moving straight forward
-        motor('S',2);
+        motor('S',1);
         // test turning clockwise (to the right)
-        motor('C',8);
+        motor('C',7);
         // test turning counter-clockwise (to the left)
-        motor('c',16);
+        motor('c',14);
         // test turning clockwise (to the right)
         motor('C',8);
     }
