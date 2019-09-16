@@ -28,14 +28,14 @@ void checkIfContinue () {
     // Bot is skewed to the right. Only the left sensor is triggered
     if (LT_L && !LT_M && !LT_R)
     {
-        direction = 'L';
+        direction = 'c';
         go = true;
     }
 
     // Bot is skewed to the left. Only the right sensor is triggered
     if (!LT_L && !LT_M && LT_R)
     {
-        direction = 'R';
+        direction = 'C';
         go = true;
     }
 
@@ -53,3 +53,6 @@ void checkIfContinue () {
 //{
 // Do something based on the middle sensor detecting a dark surface
 //}
+bool onStation() {
+    return (LT_L && LT_M && LT_R);
+}

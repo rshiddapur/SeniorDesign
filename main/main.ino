@@ -49,8 +49,7 @@ void loop () {
     //Serial.println(readDistance());
 
     followLine();
-    // station();
-    return;
+    station();
 }
 
 
