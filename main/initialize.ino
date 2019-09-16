@@ -31,7 +31,6 @@
 
 // global variables
 Servo head; // create servo object to control the looking direction
-long prevMillis; // used to time loop()
 
      void initialize()
     {
