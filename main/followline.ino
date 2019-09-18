@@ -1,53 +1,42 @@
+// Global definitions for if the robot should move and in what direction.
 
-
-bool go;
-char direction;
 void followLine() {
-    go = true;
-    direction = 'S';
+    bool go = true;
+    char direction = 'S';
     while (go)
     {
+        // Move the bot one tick in specified direction
         motor(direction, 1);
-        checkIfContinue();
+        // If it's now on a station, stop the bot at the next iteration
+        go = !onStation();
+        // Check what direction to go in
+        direction = checkDirection();
     }
-    
 }
 
-void checkIfContinue () {
-    // Bot is on the station line. Stop the bot.
-    if (onStation())
-    {
-        go = false;
-    } else {
-        go = true;
-    }
-
+char checkDirection () {
     // Bot is skewed to the right. Only the left sensor is triggered
     if (LT_L && !LT_M && !LT_R)
     {
-        direction = 'c';
-        go = true;
+        return 'c';
     }
 
     // Bot is skewed to the left. Only the right sensor is triggered
-    if (!LT_L && !LT_M && LT_R)
+    else if (!LT_L && !LT_M && LT_R)
     {
-        direction = 'C';
-        go = true;
+        return 'C';
     }
 
     // Bot is on track. Go straight
-    if (!LT_L && LT_M && !LT_R)
+    else if (!LT_L && LT_M && !LT_R)
     {
-        direction = 'S';
-        go = true;
+        return 'S';
     }
 
     // Bot is completely off track. Turn clockwise until it finds the track.
-    if (!LT_L && !LT_M && !LT_R)
+    else if (!LT_L && !LT_M && !LT_R)
     {
-        direction = 'R';
-        go = true;
+        return 'R';
     }
     
 }
