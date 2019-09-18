@@ -31,6 +31,13 @@ void setup() {
     // Example of reading the ultrasonic rangefinder and printing to
     // the serial port.
 
+    // Macros to read the three line tracking sensors.
+// These will return '0' with a light surface and '1'
+// with a dark surface.
+#define LT_R !digitalRead(10)
+#define LT_M !digitalRead(4)
+#define LT_L !digitalRead(2)
+
     // record the current time for the timing function
     prevMillis = millis();
 
@@ -39,7 +46,7 @@ void setup() {
 
 void loop () {
     // calling waitForTick() at the beginning of loop will keep it periodic
-    waitForTick();
+    //waitForTick();
 
     // Example of reading the ultrasonic rangefinder and printing to
     // the serial port.

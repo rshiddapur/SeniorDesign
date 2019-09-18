@@ -15,7 +15,7 @@
     void motor(  char direction, int numTicks )
     {
     // set default motor run time to 1/10 second (orig. value was 2000)
-    int runTime = 10;
+    int runTime = 8;
 
     // set default motor delay time to 1/100 second (orig. value was 1000)
     int delayTime =10;
@@ -34,9 +34,9 @@
                 digitalWrite(IN2, HIGH);
                 digitalWrite(IN4, LOW);
                 digitalWrite(IN3, HIGH);
-                analogWrite(ENB, 128);
-                analogWrite(ENA, 128);
-                delay(runTime * 5);
+                analogWrite(ENB, 100);
+                analogWrite(ENA, 100);
+                delay(runTime * 3.5);
                 digitalWrite(IN1, LOW);
                 digitalWrite(IN2, LOW);
                 digitalWrite(IN4, LOW);
