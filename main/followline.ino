@@ -1,5 +1,3 @@
-// Global definitions for if the robot should move and in what direction.
-
 void followLine() {
     bool go = true;
     char direction = 'S';
@@ -9,8 +7,11 @@ void followLine() {
         motor(direction, 1);
         // If it's now on a station, stop the bot at the next iteration
         go = !onStation();
-        // Check what direction to go in
-        direction = checkDirection();
+        // Check what direction to go in if moving
+        if (go)
+        {
+            direction = checkDirection();
+        } 
     }
 }
 
@@ -38,7 +39,6 @@ char checkDirection () {
     {
         return 'R';
     }
-    
 }
 
 // Check if the bot is on a station. (all three sensors detect black)
