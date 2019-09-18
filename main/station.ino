@@ -9,11 +9,11 @@
 
 
 void station() {
-    delay (2000);
+    //delay (2000);
     servoTest();
     while (onStation())
     {
-        motor('S', 1);
+        motor('S', 3);
     }
 }
 

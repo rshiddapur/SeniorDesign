@@ -1,9 +1,10 @@
 
 
-bool go = true;
-char direction = 'S';
+bool go;
+char direction;
 void followLine() {
     go = true;
+    direction = 'S';
     while (go)
     {
         motor(direction, 1);
@@ -14,7 +15,7 @@ void followLine() {
 
 void checkIfContinue () {
     // Bot is on the station line. Stop the bot.
-    if (LT_L && LT_M && LT_R)
+    if (onStation())
     {
         go = false;
     } else {
@@ -39,16 +40,19 @@ void checkIfContinue () {
     if (!LT_L && LT_M && !LT_R)
     {
         direction = 'S';
+        go = true;
     }
+
+    // Bot is completely off track. Turn clockwise until it finds the track.
+    if (!LT_L && !LT_M && !LT_R)
+    {
+        direction = 'R';
+        go = true;
+    }
+    
 }
 
-// Example of how the sensor macros can be used.  Whether or not this
-// type of sensor interaction belongs in loop() is up to your
-// code structure.
-//if (LT_M)
-//{
-// Do something based on the middle sensor detecting a dark surface
-//}
+// Check if the bot is on a station. (all three sensors detect black)
 bool onStation() {
     return (LT_L && LT_M && LT_R);
 }
