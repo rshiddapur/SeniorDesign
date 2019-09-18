@@ -3,6 +3,12 @@ void followLine() {
     char direction = 'S';
     while (go)
     {
+        head.write(90);
+        // while (obstacleCheck(10))
+        // {
+        //     delay(500);
+        // }
+        
         // Move the bot one tick in specified direction
         motor(direction, 1);
         // If it's now on a station, stop the bot at the next iteration
