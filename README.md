@@ -39,3 +39,18 @@ git clone https://github.com/rshiddapur/SeniorDesign.git
 to download the repository locally. 
 
 If you ever get confused on what to do with git, [check out this handy cheat sheet for help](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf).
+
+
+## APIs
+
+### Motor Control API
+
+Call motor() with a letter and an integer, e.g. "motor('S', 1)" will move straight ahead 1 'tick'.
+S = straight ahead
+s = straight backwards
+L = turn left forward
+l = turn left backward
+R = turn right forward
+r = turn right backward
+C = rotate clockwise
+c = rotate counter-clockwise
