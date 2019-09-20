@@ -13,7 +13,9 @@ long prevMillis; // used to time loop() in followline()
 Servo head; // create servo object to control the looking direction
 
 void setup() {  
-    //initialize(); // Test all hardware
+    // Test all hardware. Uncomment if hardware issues persist.
+    //initialize(); 
+
     // Hardware definitions
     // Motor driver pins
     #define ENB 5  // left motor enable
@@ -52,28 +54,9 @@ void setup() {
 
     // record the current time for the timing function
     prevMillis = millis();
-
 }
 
 void loop () {
-    // calling waitForTick() at the beginning of loop will keep it periodic
-    //waitForTick();
-
     followLine();
     station();
-}
-
-/**
- * waitForTick() blocks until a periodic time based on the global millis() time,
- * which can be used to force loop() to run at a predictable rate (as long as
- * the code in loop() is faster than the tick time).
- * This may or may not be desirable for your code, but it usually is.
- */
-void waitForTick()
-{
-    // block until the specified time
-    while ((millis() - prevMillis) <= LoopTime)
-        ;
-    prevMillis = millis();
-    return;
 }
