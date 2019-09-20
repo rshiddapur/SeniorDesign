@@ -1,5 +1,5 @@
 void station() {
-    delay (1000);
+    //delay (1000);
     // Check if there's an object to the right
     head.write(0);
     delay(1500);
@@ -12,7 +12,7 @@ void station() {
     // Get off the station
     while (onStation())
     {
-        motor('S', 3);
+        motor('S', 6);
     }
 }
 

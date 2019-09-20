@@ -24,5 +24,6 @@ int getDistance()
 
 bool obstacleCheck(int distance)
 {
-    return (getDistance() < distance);
+    int ultrasound = getDistance();
+    return ((ultrasound < distance) && (ultrasound != 0));
 }
