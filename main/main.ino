@@ -13,7 +13,9 @@ long prevMillis; // used to time loop() in followline()
 Servo head; // create servo object to control the looking direction
 
 void setup() {  
-    //initialize(); // Test all hardware
+    // Test all hardware. Uncomment if hardware issues persist.
+    //initialize(); 
+
     // Hardware definitions
     // Motor driver pins
     #define ENB 5  // left motor enable
@@ -52,7 +54,6 @@ void setup() {
 
     // record the current time for the timing function
     prevMillis = millis();
-
 }
 
 void loop () {

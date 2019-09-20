@@ -1,26 +1,31 @@
 void followLine() {
+    // Initialize instance variables and reset the servo head
     bool go = true;
     char direction = 'S';
     head.write(90);
     delay(500);
+
+    // Main loop for path traversal
     while (go)
     {
-        // calling waitForTick() at the beginning of loop will keep it periodic
-        // waitForTick();
+        // Check if there's an obstacle within a foot in front of the bot. 
+        // Delay 1 second after an object is detected
         while (obstacleCheck(30))
         {
             delay(1000);
         }
-        
-        
+           
         // If it's now on a station, stop the bot at the next iteration
         go = !onStation();
+
         // Check what direction to go in if moving
         if (go)
         {
             direction = checkDirection();
         }
-        // Move the bot one tick in specified direction
+
+        // Move the bot two ticks in specified direction. 
+        // Adjust this number to change how "jittery" the bot is at the expense of polling rate.
         motor(direction, 2); 
     }
 }
@@ -55,18 +60,3 @@ char checkDirection () {
 bool onStation() {
     return (LT_L && LT_M && LT_R);
 }
-
-// /**
-//  * waitForTick() blocks until a periodic time based on the global millis() time,
-//  * which can be used to force loop() to run at a predictable rate (as long as
-//  * the code in loop() is faster than the tick time).
-//  * This may or may not be desirable for your code, but it usually is.
-//  */
-// void waitForTick()
-// {
-//     // block until the specified time
-//     while ((millis() - prevMillis) <= LoopTime)
-//         ;
-//     prevMillis = millis();
-//     return;
-// }

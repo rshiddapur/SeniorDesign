@@ -1,6 +1,6 @@
 void station() {
-    //delay (1000);
     // Check if there's an object to the right
+    // Wait until it is removed if it exists
     head.write(0);
     delay(1500);
     while (obstacleCheck(31))
@@ -10,18 +10,10 @@ void station() {
     head.write(90);
 
     // Get off the station
+    // Adjust this number to change how far the bot moves off the station.
+    // Increase to avoid redetecting the same station and decrease to avoid overshoot.
     while (onStation())
     {
         motor('S', 6);
     }
-}
-
-
-void servoTest() {
-    // Set the head looking to the side.
-    head.write(0);
-    delay(2000);
-    // and to the middle
-    head.write(90);
-    delay(1000);
 }
